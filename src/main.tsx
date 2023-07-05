@@ -9,11 +9,12 @@ if ("serviceWorker" in navigator) {
 		.register("/src/utils/serviceWorker.ts")
 		.then((registration) => {
 			// Service worker registered successfully
-			console.log(registration.scope)
+
+			console.log(registration.scope);
 		})
 		.catch((error) => {
 			// Service worker registration failed
-			console.error(error);
+			console.error("Service Worker registration failed", error);
 		});
 }
 
