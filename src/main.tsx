@@ -3,20 +3,16 @@ import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { store } from "./app/store.ts";
 import App from "./App.tsx";
+import { registerSW } from "virtual:pwa-register";
 
-if ("serviceWorker" in navigator) {
-	navigator.serviceWorker
-		.register("/utils/serviceWorker.ts")
-		.then((registration) => {
-			// Service worker registered successfully
-
-			console.log("Service worker", registration.active?.state);
-		})
-		.catch((error) => {
-			// Service worker registration failed
-			console.error("Service Worker registration failed", error);
-		});
-}
+// add this to prompt for a refresh
+const updateSW = registerSW({
+	onNeedRefresh() {
+		if (confirm("New content available. Reload?")) {
+			updateSW(true);
+		}
+	}
+});
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 	<React.StrictMode>
