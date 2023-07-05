@@ -6,6 +6,7 @@
 				return cache.addAll([
 					"/",
 					"/index.html",
+					"/manifest.json",
 					"/manifest.webmanifest",
 					"/src/assets/icons/weathex-icon-192.png",
 					"/src/assets/icons/weathex-icon-512.png"
