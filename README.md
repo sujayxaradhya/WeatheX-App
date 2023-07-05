@@ -51,7 +51,7 @@ Feel free to reach out to him!
 
 ## 📝 License
 
-This project is licensed under the terms of the [GNU General Public License](https://choosealicense.com/licenses/mit/).
+This project is licensed under the terms of the [GNU General Public License](/LICENSE).
 
 ## 🤗 Thank You!
 
