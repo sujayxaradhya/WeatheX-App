@@ -1,0 +1,153 @@
+@font-face {
+	font-family: "SF Compact Display";
+	src: url("../../assets/sf-fonts/SF-Compact-Display-Medium.woff2")
+		format("woff2");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "SF Compact Display";
+	src: url("../../assets/sf-fonts/SF-Compact-Display-Bold.woff2")
+		format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+.weather_display {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: #100c08;
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.location {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.coldTemp {
+	color: #8ab6d6;
+}
+
+.coolTemp {
+	color: #42c6ff;
+}
+
+.warmTemp {
+	color: #ff64d4;
+}
+
+.hotTemp {
+	color: #e53f3f;
+}
+
+.time {
+	margin: 0.5rem;
+}
+
+.dayAndDate {
+	font-size: 1rem;
+	font-weight: 450;
+	padding: 0.2rem 0.9rem;
+	background: #100c08;
+	border: none;
+	border-radius: 1.1rem;
+}
+
+.weatherMain {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 1rem;
+	font-size: 1.2rem;
+	font-weight: 620;
+}
+
+.temp {
+	font-size: 7rem;
+	font-weight: 700;
+	margin: 0.5rem;
+}
+
+.weatherDetails {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	gap: 3rem;
+	margin: 2rem 0;
+	padding: 2rem 3rem;
+	background: #100c08;
+	border-radius: 2rem;
+}
+
+.condition,
+.humidity,
+.visibility,
+.wind {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.detailsElement {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.detailsText {
+	font-size: 0.9rem;
+}
+
+@media screen and (max-width: 768px) {
+	.weatherDetails {
+		flex-direction: row;
+		margin: 1rem;
+		padding: 1rem;
+	}
+
+	.temp {
+		font-size: 5rem;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.weatherDetails {
+		flex-direction: column;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.weatherDetails {
+		flex-direction: column;
+		padding: 1rem;
+	}
+
+	.location {
+		font-size: 2rem;
+	}
+
+	.temp {
+		font-size: 4rem;
+	}
+
+	.detailsText {
+		font-size: 0.8rem;
+	}
+}

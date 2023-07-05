@@ -1,0 +1,114 @@
+@mixin flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+@mixin absolute-centering {
+	top: 50%;
+	left: 50%;
+	transform: translateY(-50%);
+	transform: translateX(-50%);
+}
+body {
+	background: #100c08;
+
+	#loader {
+		top: 0%;
+		left: 50%;
+		transform: translateY(-50%);
+		transform: translateX(-50%);
+		margin-top: 10rem;
+		width: 30rem;
+		height: 30rem;
+		position: absolute;
+		z-index: 1;
+
+		.cloud {
+			z-index: 3;
+
+			.cloud_base {
+				@include absolute-centering;
+				width: 50%;
+				height: 10%;
+				background: #eee;
+				position: absolute;
+				border-radius: 20px;
+				z-index: 3;
+
+				.cloud_small_part {
+					position: absolute;
+					width: 40%;
+					height: 200%;
+					background: #eee;
+					top: -100%;
+					left: 10%;
+					border-radius: 50%;
+					z-index: 3;
+				}
+				.cloud_big_part {
+					position: absolute;
+					width: 50%;
+					height: 250%;
+					background: #eee;
+					top: -150%;
+					left: 40%;
+					border-radius: 50%;
+					z-index: 3;
+				}
+			}
+		}
+	}
+}
+
+@for $i from 1 through 6 {
+	.sun_beams#{$i} {
+		animation: 1s infinite alternate sun-animation;
+		width: 5px;
+		height: 20px;
+		background-color: #ffa000;
+		position: absolute;
+		top: 35%;
+		left: 35%;
+		padding: 30px;
+		transform: rotate(calc((360deg / 12) * #{$i}));
+	}
+}
+
+@for $i from 1 through 3 {
+	.teardrop#{$i} {
+		animation: 1s infinite rain#{$i};
+		@include absolute-centering;
+		display: inline;
+		position: absolute;
+		top: 45% + $i * 5%;
+		width: 10%;
+		left: 50% * 0.7 + $i * 10%;
+	}
+}
+
+@keyframes sun-animation {
+	from {
+		top: 35%;
+		left: 35%;
+	}
+	to {
+		top: 25%;
+		left: 25%;
+	}
+}
+
+@for $i from 1 through 2 {
+	@keyframes rain#{$i} {
+		0% {
+			top: 45% + $i * 5%;
+			opacity: 1;
+		}
+		80% {
+			opacity: 0.8;
+		}
+		100% {
+			top: 55% + $i * 5%;
+			opacity: 0;
+		}
+	}
+}

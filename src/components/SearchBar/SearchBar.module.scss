@@ -1,0 +1,45 @@
+.search_bar {
+	display: flex;
+	justify-content: center;
+	margin: 1rem 0 1rem 0;
+
+	input {
+		width: 15rem;
+		padding: 0.5rem;
+		font-size: 1rem;
+		border: none;
+		border-radius: 0.25rem;
+		background-color: rgba(255, 255, 255, 0.275);
+	}
+
+	input::placeholder {
+		color: #292725;
+	}
+
+	input:hover {
+		background-color: rgba(255, 255, 255, 0.2);
+	}
+
+	button {
+		padding: 0.5rem;
+		font-size: 1rem;
+		border: none;
+		background-color: rgba(255, 255, 255, 0.275);
+		color: #100c08;
+		cursor: pointer;
+		margin-left: 1rem;
+		border-radius: 0.25rem;
+
+		&:hover {
+			background-color: rgba(255, 255, 255, 0.455);
+		}
+	}
+}
+
+@media screen and (max-width: 300px) {
+	.search_bar {
+		input {
+			width: 10rem;
+		}
+	}
+}
