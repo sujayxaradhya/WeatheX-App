@@ -10,7 +10,7 @@ if ("serviceWorker" in navigator) {
 		.then((registration) => {
 			// Service worker registered successfully
 
-			console.log(registration.scope);
+			console.log("Service worker", registration.active?.state);
 		})
 		.catch((error) => {
 			// Service worker registration failed
