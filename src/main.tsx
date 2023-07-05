@@ -6,7 +6,7 @@ import App from "./App.tsx";
 
 if ("serviceWorker" in navigator) {
 	navigator.serviceWorker
-		.register("/src/utils/serviceWorker.ts")
+		.register("/utils/serviceWorker.ts")
 		.then((registration) => {
 			// Service worker registered successfully
 
