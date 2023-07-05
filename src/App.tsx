@@ -89,7 +89,7 @@ const MainComponent: React.FC = () => {
 
 	useEffect(() => {
 		if (weatherState.status === "failed") {
-			navigate("/page-404");
+			navigate("/page-not-found");
 			navigate(0);
 		}
 	}, [weatherState.status, navigate]);
@@ -139,7 +139,7 @@ const App: React.FC = () => {
 			<Router>
 				<Routes>
 					<Route path="/" element={<MainComponent />} />
-					<Route path="/page-404" element={<Page404 />} />
+					<Route path="/page-not-found" element={<Page404 />} />
 				</Routes>
 			</Router>
 		</>
